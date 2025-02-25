@@ -1,27 +1,11 @@
-## RocksDB: A Persistent Key-Value Store for Flash and RAM Storage
+## DobLIX: A Dual-Objective Learned Index for Log-Structured Merge Trees
 
-[![Build Status](https://travis-ci.org/facebook/rocksdb.svg?branch=master)](https://travis-ci.org/facebook/rocksdb)
-[![Build status](https://ci.appveyor.com/api/projects/status/fbgfu0so3afcno78/branch/master?svg=true)](https://ci.appveyor.com/project/Facebook/rocksdb/branch/master)
+This work implements DobLIX, a dual-objective learned index specifically designed for Log-Structured Merge (LSM) tree-based key-value stores. Traditional learned indexes primarily focus on optimizing index lookups, often overlooking the critical role of data access from storage, which can become a significant performance
+bottleneck. 
 
+In LSM-tree-based systems, a considerable portion of the index is stored on disk, making lookups highly dependent on the efficient coordination between in-memory structures and disk-resident data. Poorly optimized access patterns can lead to excessive I/O operations, negatively impacting read latency and overall system performance. DobLIX addresses this by incorporating a second objective, data access optimization, into the learned index training process. 
 
-RocksDB is developed and maintained by Facebook Database Engineering Team.
-It is built on earlier work on LevelDB by Sanjay Ghemawat (sanjay@google.com)
-and Jeff Dean (jeff@google.com)
+This dual-objective approach ensures that both index lookup efficiency and data access costs are minimized, leading to significant improvements in read performance while maintain- ing write efficiency in real-world LSM-tree systems. Additionally, DobLIX features a reinforcement learning agent that dynamically tunes the system parameters, allowing it to adapt to varying workloads in real-time. Experimental results using real-world datasets demonstrate that DobLIX reduces indexing overhead and improves throughput by 1.19× to 2.21× compared to state-of-the-art methods within RocksDB, a widely used LSM-tree-based storage engine.
 
-This code is a library that forms the core building block for a fast
-key value server, especially suited for storing data on flash drives.
-It has a Log-Structured-Merge-Database (LSM) design with flexible tradeoffs
-between Write-Amplification-Factor (WAF), Read-Amplification-Factor (RAF)
-and Space-Amplification-Factor (SAF). It has multi-threaded compactions,
-making it specially suitable for storing multiple terabytes of data in a
-single database.
-
-Start with example usage here: https://github.com/facebook/rocksdb/tree/master/examples
-
-See the [github wiki](https://github.com/facebook/rocksdb/wiki) for more explanation.
-
-The public interface is in `include/`.  Callers should not include or
-rely on the details of any other header files in this package.  Those
-internal APIs may be changed without warning.
-
-Design discussions are conducted in https://www.facebook.com/groups/rocksdb.dev/
+### How to run
+Run  `cmake .` in main DobLIX path
