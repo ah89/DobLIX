@@ -7,7 +7,6 @@ In LSM-tree-based systems, a considerable portion of the index is stored on disk
 
 This dual-objective approach ensures that both index lookup efficiency and data access costs are minimized, leading to significant improvements in read performance while maintain- ing write efficiency in real-world LSM-tree systems. Additionally, DobLIX features a reinforcement learning agent that dynamically tunes the system parameters, allowing it to adapt to varying workloads in real-time. Experimental results using real-world datasets demonstrate that DobLIX reduces indexing overhead and improves throughput by 1.19× to 2.21× compared to state-of-the-art methods within RocksDB, a widely used LSM-tree-based storage engine.
 
-Here’s a simple **build instruction** for your **DobLIX** project based on **RocksDB** that you can add to your `README.md`:  
 
 
 
