@@ -63,3 +63,21 @@ rm -rf build
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
+
+## Citation
+```BibTeX
+@article{Heidari_2025,
+   title={DobLIX: A Dual-Objective Learned Index for Log-Structured Merge Trees},
+   volume={18},
+   ISSN={2150-8097},
+   url={http://dx.doi.org/10.14778/3749646.3749667},
+   DOI={10.14778/3749646.3749667},
+   number={11},
+   journal={Proceedings of the VLDB Endowment},
+   publisher={Association for Computing Machinery (ACM)},
+   author={Heidari, Alireza and Ahmadi, Amirhossein and Zhang, Wei},
+   year={2025},
+   month=jul, pages={3965–3978} }
+```
+
+
